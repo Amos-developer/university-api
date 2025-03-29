@@ -89,3 +89,7 @@ Apache: Web server for hosting the PHP API.
 PHP: Server-side scripting language for API logic.
 
 MySQL: Database for storing university data.
+
+### My API Endpoints are:
+>> http://13.60.243.214/students.php
+>> http://13.60.243.214/subjects.php
