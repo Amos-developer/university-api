@@ -93,3 +93,50 @@ MySQL: Database for storing university data.
 ### My API Endpoints are:
 >> http://13.60.243.214/students.php
 >> http://13.60.243.214/subjects.php
+
+## Assignment 2
+The following are three common backup schemes, how each is executed, and their pros and cons:
+
+1. Full Backup
+🔧 Execution:
+-> A full backup copies all files and data from the system to the backup location (external drive, cloud, etc.).
+-> It’s typically done on a weekly or monthly basis.
+
+Advantages:
+1) Simple to restore — only one backup file is needed.
+2) Easy to manage and verify.
+
+Disadvantages:
+1) Takes the most time and storage space.
+2) Not efficient for frequent backups.
+
+
+2. Incremental Backup
+🔧 Execution:
+-> Starts with a full backup.
+-> Afterward, only changes since the last backup (full or incremental) are saved.
+
+For example, if files are modified on Monday and Tuesday, Monday’s backup has changes from Sunday, and Tuesday’s has only changes from Monday.
+
+Advantages:
+i) Fast and space-efficient after the initial full backup.
+ii)Ideal for daily or even hourly backups.
+
+Disadvantages:
+i)Restoration is slow — you need the full backup and all subsequent incremental backups.
+ii)If one backup in the chain is lost, recovery is incomplete.
+
+3. Differential Backup
+🔧 Execution:
+-> Starts with a full backup.
+-> Each differential backup saves all changes since the last full backup.
+
+For instance, Monday’s backup includes changes from Sunday, and Tuesday’s includes changes from Sunday to Tuesday.
+
+Advantages:
+i) Faster to restore than incremental (only need full + latest differential).
+ii) More data redundancy than incremental.
+
+Disadvantages:
+i)Grows larger over time until the next full backup.
+ii)Slower than incremental for backup, but faster for recovery.
