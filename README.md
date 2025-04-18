@@ -91,8 +91,8 @@ PHP: Server-side scripting language for API logic.
 MySQL: Database for storing university data.
 
 ### My API Endpoints are:
->> http://13.60.243.214/students.php
->> http://13.60.243.214/subjects.php
+>> http://16.171.20.107/students.php
+>> http://16.171.20.107/subjects.php
 
 ## Assignment 2
 The following are three common backup schemes, how each is executed, and their pros and cons:
