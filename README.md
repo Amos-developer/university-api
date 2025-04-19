@@ -140,3 +140,46 @@ ii) More data redundancy than incremental.
 Disadvantages:
 i)Grows larger over time until the next full backup.
 ii)Slower than incremental for backup, but faster for recovery.
+
+📂 Bash Scripts (bash_scripts/)
+This folder contains automation scripts used to manage the Ubuntu server hosting the Assignment 1 API:
+
+1. health_check.sh
+Purpose: Monitors CPU, memory, and disk usage. Checks if Apache/Nginx is running and confirms the availability of /students and /subjects API endpoints.
+
+🔧 Log File: /var/log/server_health.log
+
+2. backup_api.sh
+Purpose: Creates daily backups of the API project and MySQL database. Automatically deletes backups older than 7 days.
+
+Backup Location: /home/ubuntu/backups/
+
+🔧 Log File: /var/log/backup.log
+
+3. update_server.sh
+Purpose: Automates system updates, pulls the latest code from GitHub, and restarts the web server.
+
+🔧 Log File: /var/log/update.log
+
+🛠️ Setup & Usage
+Make the scripts executable:
+>>> chmod +x health_check.sh backup_api.sh update_server.sh
+
+Run a script manually:
+>>> sudo ./health_check.sh
+>>> sudo ./backup_api.sh
+>>> sudo ./update_server.sh
+
+### Ensure dependencies are installed:
+curl – used to check API endpoint status
+tar, mysqldump – used for backups
+git, systemctl – used for updates and restarting server
+
+### Track and Push to GitHub
+>>> git add bash_scripts README.md
+>>> git commit -m "Your message here......."
+>>> git push origin main
+
+
+
+
