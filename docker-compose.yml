@@ -6,10 +6,10 @@ services:
     container_name: mysql_container
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: university
-      MYSQL_USER: amos123
-      MYSQL_PASSWORD:  
+      MYSQL_ROOT_PASSWORD: university_root_password
+      MYSQL_DATABASE: university_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: amos123
     ports:
       - "3306:3306"
     volumes:
@@ -24,7 +24,7 @@ services:
       - database
     environment:
       - DB_HOST=database
-      - DB_DATABASE=university
+      - DB_DATABASE=university_db
       - DB_USER=root
       - DB_PASSWORD=amos123
     volumes:
