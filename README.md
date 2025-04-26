@@ -180,6 +180,43 @@ git, systemctl – used for updates and restarting server
 >>> git commit -m "Your message here......."
 >>> git push origin main
 
+###
+📦 How to Build Docker Images
+
+🛠️ Requirements
+    ->Docker
+    ->Docker Compose
+    ->AWS EC2 instance (Ubuntu)
+    ->Git (optional)
+
+1) First clone the project
+>> git clone https://github.com/your-username/university-api.git
+>> cd university-api
+
+2) Build the Docker containers:
+>> docker compose build
+
+🚀 How to Deploy and Run Containers
+>> docker compose up -d
+
+This will:
+i) Start a MySQL database container.
+ii)Start a PHP Apache server container running your API.
+
+You can then access your API:
+http://localhost:8080/students.php
+http://localhost:8080/subjects.php
+
+🛑 How to Stop Containers
+>> docker compose down
+
+🧹 Common Troubleshooting Tips
+1)Port 8080 in use, solution: Change to another port in docker-compose.yml
+2)Cannot connect to MySQL, solution: Make sure API uses database as DB_HOST, not localhost
+3)Database not found, solution: Make sure you wait for the mysql_container to be fully ready
+4)403 or 500 error, solution: Check permissions, database settings, Docker logs
+
+
 
 
 
