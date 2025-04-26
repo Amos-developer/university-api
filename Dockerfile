@@ -1,4 +1,3 @@
-
 # Use an official PHP image with Apache
 FROM php:8.2-apache
 
